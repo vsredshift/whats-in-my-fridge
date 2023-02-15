@@ -26,7 +26,8 @@ const setProduct = asyncHandler(async (req, res) => {
         opened: req.body.opened,
         imageUrl: req.body.imageUrl,
         lastsFor: req.body.lastsFor,
-        expires: req.body.expires
+        expires: req.body.expires,
+        eanCode: req.body.eanCode,
     })
 
     res.status(201).json(product)

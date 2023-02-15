@@ -21,6 +21,9 @@ const productSchema = mongoose.Schema({
     },
     imageUrl: {
         type: String,
+    },
+    eanCode: {
+        type: Number,
     }
 }, {
     timestamps: true,
