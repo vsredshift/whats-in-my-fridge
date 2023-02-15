@@ -22,7 +22,11 @@ const setProduct = asyncHandler(async (req, res) => {
 
     const product = await Product.create({
         title: req.body.title,
-        user: req.user.id
+        user: req.user.id,
+        opened: req.body.opened,
+        imageUrl: req.body.imageUrl,
+        lastsFor: req.body.lastsFor,
+        expires: req.body.expires
     })
 
     res.status(201).json(product)

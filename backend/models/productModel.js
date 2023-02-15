@@ -9,6 +9,18 @@ const productSchema = mongoose.Schema({
     title: {
         type: String,
         required: [true, "Please select product title"]
+    },
+    opened: {
+        type: Date,
+    },
+    expires: {
+        type: Date,
+    },
+    lastsFor: {
+        type: Number,
+    },
+    imageUrl: {
+        type: String,
     }
 }, {
     timestamps: true,

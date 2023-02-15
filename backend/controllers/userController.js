@@ -39,6 +39,7 @@ const registerUser = asyncHandler( async (req, res) => {
             username: user.username,
             fullname: user.fullname,
             email: user.email,
+            admin: user.admin,
             token: generateToken(user._id),
         })
     } else {
@@ -83,8 +84,6 @@ const getUser = asyncHandler( async (req, res) => {
         fullname,
         email,
     })
-
-    res.json({ message: 'Get Current User' })
 })
 
 // Create JWT
