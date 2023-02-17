@@ -13,6 +13,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(errorHandler)
 
 app.use('/v1/api/products', require('./routes/productRoutes'))
+app.use('/v1/api/users', require('./routes/userRoutes'))
 
 
 app.listen(port, () => {
