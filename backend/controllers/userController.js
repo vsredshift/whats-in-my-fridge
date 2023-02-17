@@ -39,6 +39,7 @@ const registerUser = asyncHandler( async (req, res) => {
             username: user.username,
             fullname: user.fullname,
             email: user.email,
+            admin: user.admin,
             token: generateToken(user._id),
         })
     } else {
@@ -76,15 +77,14 @@ const loginUser = asyncHandler( async (req, res) => {
 // @route   GET /v1/api/users/me
 // @access  Private
 const getUser = asyncHandler( async (req, res) => {
-    const { _id, username, fullname, email } = await User.findById(req.user.id)
+    const { _id, username, fullname, email, admin } = await User.findById(req.user.id)
     res.status(200).json({
         id: _id,
         username,
         fullname,
         email,
+        admin
     })
-
-    res.json({ message: 'Get Current User' })
 })
 
 // Create JWT
