@@ -77,14 +77,7 @@ const loginUser = asyncHandler( async (req, res) => {
 // @route   GET /v1/api/users/me
 // @access  Private
 const getUser = asyncHandler( async (req, res) => {
-    const { _id, username, fullname, email, admin } = await User.findById(req.user.id)
-    res.status(200).json({
-        id: _id,
-        username,
-        fullname,
-        email,
-        admin
-    })
+    res.status(200).json(req.user)
 })
 
 // Create JWT
